@@ -1,8 +1,6 @@
 * text=auto
-
 # C# diff 하이라이트
 *.cs diff=csharp
-
 # Unity 에셋/씬을 텍스트(YAML)로 취급
 *.meta text
 *.unity text
@@ -11,10 +9,19 @@
 *.controller text
 *.mat text
 *.shader text
-
 # (선택) Smart Merge 적용 대상
 *.unity merge=unityyamlmerge
 *.prefab merge=unityyamlmerge
 *.anim merge=unityyamlmerge
 *.controller merge=unityyamlmerge
 *.mat merge=unityyamlmerge
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.otf filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.ttf filter=lfs diff=lfs merge=lfs -text
