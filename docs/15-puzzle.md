@@ -28,5 +28,6 @@
 ## 다음 단계
 - [x] Unity 프로젝트 생성/커밋
 - [x] Editor 설정(Visible Meta, Force Text)
-- [ ] GridManager/Tile 뼈대
-- [ ] 셔플(해결 가능) + 이동/승리 체크
+- [x] GridManager/Tile 뼈대
+- [x] 셔플(해결 가능) + 이동/승리 체크
+- [ ] 게임 리셋 기능과 클리어 불가능한 경우 제외
