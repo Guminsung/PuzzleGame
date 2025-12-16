@@ -26,7 +26,7 @@
 - 순열 판정 정확도, 추후 모바일/효과 확장
 
 ## 다음 단계
-- [ ] Unity 프로젝트 생성/커밋
-- [ ] Editor 설정(Visible Meta, Force Text)
+- [x] Unity 프로젝트 생성/커밋
+- [x] Editor 설정(Visible Meta, Force Text)
 - [ ] GridManager/Tile 뼈대
 - [ ] 셔플(해결 가능) + 이동/승리 체크
