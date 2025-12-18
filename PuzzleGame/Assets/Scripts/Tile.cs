@@ -43,7 +43,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		// Å¬¸¯ÇßÀ» ¶§ Çàµ¿
+		// í´ë¦­í–ˆì„ ë•Œ í–‰ë™
 		board.IsMoveTile(this);
 	}
 
