@@ -32,7 +32,7 @@ public class Board : MonoBehaviour
 		// tileList에 있는 모든 요소의 SetCorrectPosition() 메소드 호출
 		tileList.ForEach(x => x.SetCorrectPosition());
 
-		StartCoroutine("OnSuffle");
+		StartCoroutine("OnShuffle");
 		// 게임시작과 동시에 플레이시간 초 단위 연산
 		StartCoroutine("CalculatePlaytime");
 	}
@@ -53,7 +53,7 @@ public class Board : MonoBehaviour
 		}
 	}
 
-	private IEnumerator OnSuffle()
+	private IEnumerator OnShuffle()
 	{
 		float current	= 0;
 		float percent	= 0;
