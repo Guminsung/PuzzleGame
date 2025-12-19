@@ -5,25 +5,25 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
 	[SerializeField]
-	private	GameObject		resultPanel;
+	private GameObject resultPanel;
 	[SerializeField]
-	private	TextMeshProUGUI	textPlaytime;
+	private TextMeshProUGUI textPlaytime;
 	[SerializeField]
-	private	TextMeshProUGUI	textMoveCount;
+	private TextMeshProUGUI textMoveCount;
 	[SerializeField]
-	private	Board			board;
+	private Board board;
 
 	public void OnResultPanel()
 	{
 		resultPanel.SetActive(true);
 
-		textPlaytime.text = $"PLAY TIME : {board.Playtime/60:D2}:{board.Playtime%60:D2}";
-		textMoveCount.text = "MOVE COUNT : "+board.MoveCount;
+		textPlaytime.text = $"PLAY TIME : {board.Playtime / 60:D2}:{board.Playtime % 60:D2}";
+		textMoveCount.text = "MOVE COUNT : " + board.MoveCount;
 	}
 
-	public void OnClickRestart()
+	public void OnClickReset()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		if (resultPanel != null) resultPanel.SetActive(false);
+		board.ResetGame();
 	}
 }
-
