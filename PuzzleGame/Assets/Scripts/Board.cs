@@ -15,13 +15,16 @@ public class Board : MonoBehaviour
 	private float neighborTileDistance = 102;               // 인접한 타일 사이의 거리. 별도로 계산할 수도 있다.
 
 	public Vector3 EmptyTilePosition { set; get; }          // 빈 타일의 위치
-	public int Playtime { private set; get; } = 0;          // 게임 플레이 시간
+	public int Playtime { private set; get; } = -1;         // 게임 플레이 시간
 	public int MoveCount { private set; get; } = 0;         // 이동 횟수
+
+	private UIController ui;
 
 	private IEnumerator Start()
 	{
 		tileList = new List<Tile>();
-
+		ui = GetComponent<UIController>();
+		
 		SpawnTiles();
 
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(tilesParent.GetComponent<RectTransform>());
@@ -131,6 +134,7 @@ public class Board : MonoBehaviour
 
 			// 타일을 이동할 때마다 이동 횟수 증가
 			MoveCount++;
+			ui.UpdateHUD();
 		}
 	}
 
@@ -146,7 +150,7 @@ public class Board : MonoBehaviour
 			StopCoroutine("CalculatePlaytime");
 			// Board 오브젝트에 컴포넌트로 설정하기 때문에
 			// 그리고 한번만 호출하기 때문에 변수를 만들지 않고 바로 호출..
-			GetComponent<UIController>().OnResultPanel();
+			ui.OnResultPanel();
 		}
 	}
 
@@ -155,6 +159,7 @@ public class Board : MonoBehaviour
 		while (true)
 		{
 			Playtime++;
+			ui.UpdateHUD();
 
 			yield return new WaitForSeconds(1);
 		}
@@ -167,7 +172,8 @@ public class Board : MonoBehaviour
 
 		StopCoroutine("CalculatePlaytime"); // 또는 핸들 저장해서 중지
 		MoveCount = 0;
-		Playtime = 0;
+		Playtime = -1;
+		ui.UpdateHUD();
 
 		StartCoroutine(OnShuffle());        // 해결 가능한 셔플 재실행
 		StartCoroutine("CalculatePlaytime");
