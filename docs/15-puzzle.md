@@ -30,4 +30,5 @@
 - [x] Editor 설정(Visible Meta, Force Text)
 - [x] GridManager/Tile 뼈대
 - [x] 셔플(해결 가능) + 이동/승리 체크
-- [ ] 게임 리셋 기능과 클리어 불가능한 경우 제외
+- [x] 게임 리셋 기능과 클리어 불가능한 경우 제외
+- [x] 게임 결과 및 실시간 HUD 추가
